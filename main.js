@@ -64,6 +64,8 @@ const cm = {
     }
 
     cm. canvas.addEventListener('click', function(e){
+        if(indexOfLight >= cm.colors.length) return;
+        
         //mouse.x = e.layerX;  // browser마다 다를 수 있음
         //mouse.y = e.layerY;
         mouse.x = e.clientX - cm.canvas.getBoundingClientRect().left;

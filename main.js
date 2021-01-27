@@ -16,7 +16,12 @@ const cm = {
         '255, 250, 180', //Yellow
         '200, 220, 255', //blue
         '239, 173, 255'  //purple
-    ]
+    ],
+    
+    charactersSrc: {
+        somun: 'image/sprite-somun.png',
+        ji: 'image/sprite-ji.png'
+    }
 };
 
 (function(){
@@ -41,6 +46,21 @@ const cm = {
 
     } 
 
+    function setChracters() {
+        const somun = new Character(
+            cm.charactersSrc.somun,
+            'underAttack',
+            (cm.canvasWidth*0.5) - 256 + 64,
+            (cm.canvasHeight*0.5) - 64
+        );
+        const ji = new Character(
+            cm.charactersSrc.ji,
+            'underAttack',
+            (cm.canvasWidth*0.5) - 256 + 64,
+            (cm.canvasHeight*0.5) - 64
+        );
+    }
+
     function setup() {
         setSize();
         draw();
@@ -56,8 +76,19 @@ const cm = {
         //particle.draw();
         //line.draw();
         //light.draw();
+        let light;
+        let scaleRatio;
+
         for (let i = 0; i < lights.length; i++) {
-            lights[i].draw();
+            light = lights[i];
+            scaleRatio = light.y/cm.canvasHeight + 1;
+            cm.context.save();  //밑의 상태를 저장
+            cm.context.translate(light.x, light.y);
+            cm.context.scale(scaleRatio, scaleRatio);
+            cm.context.translate(-light.x, -light.y);
+            light.draw();
+            cm.context.restore();
+            console.log(light.y);
         }
 
         requestAnimationFrame(draw);

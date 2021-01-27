@@ -31,12 +31,15 @@ const cm = {
 
     //const particle = new Particle(100, 400);
 
-    const line = new Line(200, 300);
+    //const line = new Line(200, 300);
+
+    const light = new Light(300, 400);
 
     function draw() {
         //particle.draw();
         cm.context.clearRect(0, 0, cm.canvasWidth, cm.canvasHeight);
-        line.draw();
+        //line.draw();
+        light.draw();
         requestAnimationFrame(draw);
     }
 

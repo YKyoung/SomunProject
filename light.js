@@ -24,11 +24,29 @@ class Line {
         for (let i =0; i<numberOfParticles; i++) {
             this.particles.push(
                 new Particle(this.x, this.y)
-            )        
-        };
-    }
+            );        
+        }
 
-}
+    }
+    draw(){
+        cm.context.beginPath();
+        cm.context.moveTo(this.x, this.y);
+        cm.context.lineTo(this.x, this.y - this.height);
+        cm.context.stroke();
+
+        let particle;
+        for (let i = 0; i < this.particles.length; i++) {
+            particle = this.particles[i];
+            particle.y -= particle.speed;
+            if (particle.y < this.y- this.height) {
+                particle.y = this.y;
+            }
+            particle.draw();
+        }
+    }
+}    
+
+
 class Light {
 
 }

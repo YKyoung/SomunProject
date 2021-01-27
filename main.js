@@ -29,10 +29,15 @@ const cm = {
         draw();
     }
 
-    const particle = new Particle(100, 400);
+    //const particle = new Particle(100, 400);
+
+    const line = new Line(200, 300);
 
     function draw() {
-        particle.draw();
+        //particle.draw();
+        cm.context.clearRect(0, 0, cm.canvasWidth, cm.canvasHeight);
+        line.draw();
+        requestAnimationFrame(draw);
     }
 
     window.addEventListener('resize', setSize);

@@ -34,7 +34,7 @@ class Character {
     }
 
     draw() {
-        if(cm.playedFrame % 10 === 0){
+        if(cm.playedFrame % 15 === 0){
             if(this.frame < this.endFrame) {
                 this.frame++;
             } else{

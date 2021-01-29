@@ -26,44 +26,45 @@ class Line {
             0, gradientStartY, 0, this.y
         );
 
-       // this.gradient.addColorStop(0.0,  'rgba(${cm.colors[this.index]}, 0.0)');   
-       // this.gradient.addColorStop(0.5,  'rgba(${cm.colors[index]}, 0.5)');   
-       // this.gradient.addColorStop(0.75,  'rgba(${cm.colors[index]}, 0.75)');   
-       // this.gradient.addColorStop(1.0,  'rgba(${cm.colors[index]}, 1.0)');  
+    //    this.gradient.addColorStop(0.0,  `rgba(${cm.colors[index]}, 0.0)`);   
+    //    this.gradient.addColorStop(0.5,  `rgba(${cm.colors[index]}, 0.5)`);   
+    //    this.gradient.addColorStop(0.75, `rgba(${cm.colors[index]}, 0.75)`);   
+    //    this.gradient.addColorStop(1.0,  `rgba(${cm.colors[index]}, 1.0)`);  //의미가 없음
+       this.gradient.addColorStop(1.0,  `rgb(${cm.colors[index]})`);  
         
        //console.log(index);
         
-       if(index == 0) {
-           this.gradient.addColorStop(0.0,  'rgba(255, 160, 150, 0.0)');   
-           this.gradient.addColorStop(0.5,  'rgba(255, 160, 150, 0.5)');   
-           this.gradient.addColorStop(0.75, 'rgba(255, 160, 150, 0.8)');   
+    //    if(index == 0) {
+    //        this.gradient.addColorStop(0.0,  'rgba(255, 160, 150, 0.0)');   
+    //        this.gradient.addColorStop(0.5,  'rgba(255, 160, 150, 0.5)');   
+    //        this.gradient.addColorStop(0.75, 'rgba(255, 160, 150, 0.8)');   
             
-       }
-       else if(index == 1) {
-           this.gradient.addColorStop(0.0,  'rgba(255, 200, 120, 0.0)');   
-           this.gradient.addColorStop(0.5,  'rgba(255, 200, 120, 0.5)');   
-           this.gradient.addColorStop(0.75, 'rgba(255, 200, 120, 0.8)');                      
-       } 
-       else if(index == 2) {
-           this.gradient.addColorStop(0.0,  'rgba(255, 250, 180, 0.0)');   
-           this.gradient.addColorStop(0.5,  'rgba(255, 250, 180, 0.5)');   
-           this.gradient.addColorStop(0.75, 'rgba(255, 250, 180, 0.8)');   
+    //    }
+    //    else if(index == 1) {
+    //        this.gradient.addColorStop(0.0,  'rgba(255, 200, 120, 0.0)');   
+    //        this.gradient.addColorStop(0.5,  'rgba(255, 200, 120, 0.5)');   
+    //        this.gradient.addColorStop(0.75, 'rgba(255, 200, 120, 0.8)');                      
+    //    } 
+    //    else if(index == 2) {
+    //        this.gradient.addColorStop(0.0,  'rgba(255, 250, 180, 0.0)');   
+    //        this.gradient.addColorStop(0.5,  'rgba(255, 250, 180, 0.5)');   
+    //        this.gradient.addColorStop(0.75, 'rgba(255, 250, 180, 0.8)');   
                        
-       }     
+    //    }     
        
-       else if(index == 3) {
-           this.gradient.addColorStop(0.0,  'rgba(200, 220, 255, 0.0)');   
-           this.gradient.addColorStop(0.5,  'rgba(200, 220, 255, 0.5)');   
-           this.gradient.addColorStop(0.75, 'rgba(200, 220, 255, 0.8)');   
+    //    else if(index == 3) {
+    //        this.gradient.addColorStop(0.0,  'rgba(200, 220, 255, 0.0)');   
+    //        this.gradient.addColorStop(0.5,  'rgba(200, 220, 255, 0.5)');   
+    //        this.gradient.addColorStop(0.75, 'rgba(200, 220, 255, 0.8)');   
                        
-       }     
+    //    }     
 
-       else if(index == 4) {
-           this.gradient.addColorStop(0.0,  'rgba(239, 173, 255, 0.0)');   
-           this.gradient.addColorStop(0.5,  'rgba(239, 173, 255, 0.5)');   
-           this.gradient.addColorStop(0.75, 'rgba(239, 173, 255, 0.8)');   
+    //    else if(index == 4) {
+    //        this.gradient.addColorStop(0.0,  'rgba(239, 173, 255, 0.0)');   
+    //        this.gradient.addColorStop(0.5,  'rgba(239, 173, 255, 0.5)');   
+    //        this.gradient.addColorStop(0.75, 'rgba(239, 173, 255, 0.8)');   
                         
-       }     
+    //    }     
         
         const numberOfParticles = 30;
         this.particles = [];
@@ -116,45 +117,46 @@ class Light {
             0, cm.canvasHeight - (this.height + (cm.canvasHeight - this.y)),
             0, this.y);
         
-       // this.gradient.addColorStop(0.0,  'rgba(${cm.colors[this.index]}, 0.0)');   
-       // this.gradient.addColorStop(0.5,  'rgba(${cm.colors[index]}, 0.5)');   
-       // this.gradient.addColorStop(0.75,  'rgba(${cm.colors[index]}, 0.75)');   
-       // this.gradient.addColorStop(1.0,  'rgba(${cm.colors[index]}, 1.0)');  
+    //    this.gradient.addColorStop(0.0,  `rgba(${cm.colors[index]}, 0.0)`);   
+    //    this.gradient.addColorStop(0.5,  `rgba(${cm.colors[index]}, 0.5)`);   
+       this.gradient.addColorStop(0.75, `rgba(${cm.colors[index]}, 0.8)`);   
+    //    this.gradient.addColorStop(1.0,  `rgba(${cm.colors[index]}, 1.0)`); //약간 의미가 있음 
+        // this.gradient.addColorStop(1.0,  `rgb(${cm.colors[index]})`);  
         
-        console.log(index);
+        //console.log(index);
         
-        if(index == 0) {
-            this.gradient.addColorStop(0.0,  'rgba(222, 35, 18, 0.0)');   
-            this.gradient.addColorStop(0.5,  'rgba(222, 35, 18, 0.5)');   
-            this.gradient.addColorStop(0.75,  'rgba(222, 35, 18, 0.75)');   
-            this.gradient.addColorStop(1.0,  'rgba(222, 35, 18, 1.0)');  
-        }
-        else if(index == 1) {
-            this.gradient.addColorStop(0.0,  'rgba(238, 150, 63, 0.0)');   
-            this.gradient.addColorStop(0.5,  'rgba(238, 150, 63, 0.5)');   
-            this.gradient.addColorStop(0.75,  'rgba(238, 150, 63, 0.75)');   
-            this.gradient.addColorStop(1.0,  'rgba(238, 150, 63, 1.0)');               
-        } 
-        else if(index == 2) {
-            this.gradient.addColorStop(0.0,  'rgba(255, 228, 0, 0.0)');   
-            this.gradient.addColorStop(0.5,  'rgba(255, 228, 0, 0.5)');   
-            this.gradient.addColorStop(0.75,  'rgba(255, 228, 0, 0.75)');   
-            this.gradient.addColorStop(1.0,  'rgba(255, 228, 0, 1.0)');               
-        }     
+        // if(index == 0) {
+        //     this.gradient.addColorStop(0.0,  'rgba(222, 35, 18, 0.0)');   
+        //     this.gradient.addColorStop(0.5,  'rgba(222, 35, 18, 0.5)');   
+        //     this.gradient.addColorStop(0.75,  'rgba(222, 35, 18, 0.75)');   
+        //     this.gradient.addColorStop(1.0,  'rgba(222, 35, 18, 1.0)');  
+        // }
+        // else if(index == 1) {
+        //     this.gradient.addColorStop(0.0,  'rgba(238, 150, 63, 0.0)');   
+        //     this.gradient.addColorStop(0.5,  'rgba(238, 150, 63, 0.5)');   
+        //     this.gradient.addColorStop(0.75,  'rgba(238, 150, 63, 0.75)');   
+        //     this.gradient.addColorStop(1.0,  'rgba(238, 150, 63, 1.0)');               
+        // } 
+        // else if(index == 2) {
+        //     this.gradient.addColorStop(0.0,  'rgba(255, 228, 0, 0.0)');   
+        //     this.gradient.addColorStop(0.5,  'rgba(255, 228, 0, 0.5)');   
+        //     this.gradient.addColorStop(0.75,  'rgba(255, 228, 0, 0.75)');   
+        //     this.gradient.addColorStop(1.0,  'rgba(255, 228, 0, 1.0)');               
+        // }     
         
-        else if(index == 3) {
-            this.gradient.addColorStop(0.0,  'rgba(63, 145, 255, 0.0)');   
-            this.gradient.addColorStop(0.5,  'rgba(63, 145, 255, 0.5)');   
-            this.gradient.addColorStop(0.75,  'rgba(63, 145, 255, 0.75)');   
-            this.gradient.addColorStop(1.0,  'rgba(63, 145, 255, 1.0)');               
-        }     
+        // else if(index == 3) {
+        //     this.gradient.addColorStop(0.0,  'rgba(63, 145, 255, 0.0)');   
+        //     this.gradient.addColorStop(0.5,  'rgba(63, 145, 255, 0.5)');   
+        //     this.gradient.addColorStop(0.75,  'rgba(63, 145, 255, 0.75)');   
+        //     this.gradient.addColorStop(1.0,  'rgba(63, 145, 255, 1.0)');               
+        // }     
 
-        else if(index == 4) {
-            this.gradient.addColorStop(0.0,  'rgba(185, 22, 226, 0.0)');   
-            this.gradient.addColorStop(0.5,  'rgba(185, 22, 226, 0.5)');   
-            this.gradient.addColorStop(0.75,  'rgba(185, 22, 226, 0.75)');   
-            this.gradient.addColorStop(1.0,  'rgba(185, 22, 226, 1.0)');               
-        }     
+        // else if(index == 4) {
+        //     this.gradient.addColorStop(0.0,  'rgba(185, 22, 226, 0.0)');   
+        //     this.gradient.addColorStop(0.5,  'rgba(185, 22, 226, 0.5)');   
+        //     this.gradient.addColorStop(0.75,  'rgba(185, 22, 226, 0.75)');   
+        //     this.gradient.addColorStop(1.0,  'rgba(185, 22, 226, 1.0)');               
+        // }     
     }
 
     draw() {

@@ -44,7 +44,7 @@ class Character {
             (this.frame * 256), 0, 256, 256,  //src image의 크기 및 위치
             this.x, this.y, this.width, this.height //canvas에 그릴 크기 및 위치 
 
-        )
+        );
     }
 
 }

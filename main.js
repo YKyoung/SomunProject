@@ -19,8 +19,8 @@ const cm = {
     ],
     
     charactersSrc: {
-        somun: 'image/sprite-somun.png',
-        ji: 'image/sprite-ji.png'
+        somun: 'images/sprite-somun.png',
+        ji: 'images/sprite-ji.png'
     }
 };
 
@@ -33,6 +33,7 @@ const cm = {
     const dpr = 1;
     const mouse ={x: 0, y: 0};
     const lights =[];
+    const characters = [];
     let indexOfLight = 0;
 
     function setSize() {
@@ -46,7 +47,7 @@ const cm = {
 
     } 
 
-    function setChracters() {
+    function setCharacters() {
         const somun = new Character(
             cm.charactersSrc.somun,
             'underAttack',
@@ -55,14 +56,18 @@ const cm = {
         );
         const ji = new Character(
             cm.charactersSrc.ji,
-            'underAttack',
-            (cm.canvasWidth*0.5) - 256 + 64,
+            'attack',
+            (cm.canvasWidth*0.5) - 64,
             (cm.canvasHeight*0.5) - 64
         );
+
+        characters.push(somun);
+        characters.push(ji);
     }
 
     function setup() {
         setSize();
+        setCharacters();
         draw();
     }
 
@@ -77,7 +82,13 @@ const cm = {
         //line.draw();
         //light.draw();
         let light;
+        let character;
         let scaleRatio;
+
+        for (let i = 0; i < characters.length; i++) {
+            character = characters[i];
+            character.draw();
+        }
 
         for (let i = 0; i < lights.length; i++) {
             light = lights[i];
@@ -88,7 +99,7 @@ const cm = {
             cm.context.translate(-light.x, -light.y);
             light.draw();
             cm.context.restore();
-            console.log(light.y);
+            //console.log(light.y);
         }
 
         requestAnimationFrame(draw);

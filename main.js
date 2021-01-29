@@ -166,14 +166,13 @@ const cm = {
         allItems.push(light);
         
         indexOfLight++;
-        //console.log(indexOfLight);
-
+      
         if(indexOfLight >= cm.colors.length){
             characters[0].updateAction('attack');
             characters[1].updateAction('underAttack');
 
         }
-        console.log("ggggg");
+      
 
         setZOrder();
 

@@ -2,7 +2,7 @@ class Particle {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.yForOrder = this.y;
+       
         this.radius =Math.random() + 0.5;
         this.speed = Math.random()*3 +0.5;
         //console.log(this.yForOrder);
@@ -102,6 +102,7 @@ class Light {
         this.x = x;
         this.y = y;
         //this.index = index;
+        this.yForOrder = this.y;
         this.width = 20;
         this.height = 300;
         this.angle =0;
@@ -161,6 +162,8 @@ class Light {
     }
 
     draw() {
+        
+       
         cm.context.fillStyle = this.gradient;
         
         cm.context.save();  //blur를 저장하고 restore()에서 복원
@@ -184,6 +187,7 @@ class Light {
             this.width*0.25 + Math.abs(Math.sin(this.angle * Math.PI/180*30))*2,
             0, 0, Math.PI*2
         )
+       
         cm.context.fill();
         this.angle++;
 

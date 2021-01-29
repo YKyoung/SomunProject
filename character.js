@@ -10,6 +10,7 @@ class Character {
         this.image.src = imageSrc;
         this.setAction();
     }
+
     setAction() {
         switch (this.action) {
             case 'attack':
@@ -40,7 +41,8 @@ class Character {
                 this.frame = this.startFrame;
             }
         }        
-
+        
+        //console.log(this.yForOrder);
         cm.context.drawImage(
             this.image,
             (this.frame * 256), 0, 256, 256,  //src image의 크기 및 위치

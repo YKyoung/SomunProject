@@ -2,9 +2,10 @@ class Particle {
     constructor(x, y) {
         this.x = x;
         this.y = y;
+        this.yForOrder = this.y;
         this.radius =Math.random() + 0.5;
         this.speed = Math.random()*3 +0.5;
-        //console.log(this.radius);
+        //console.log(this.yForOrder);
     }
 
     draw() {

@@ -4,12 +4,12 @@ class Character {
         this.height = 256;
         this.x = x;
         this.y = y;
+        this.yForOrder = this.y + this.height -24;
         this.action = action;
         this.image = new Image();
         this.image.src = imageSrc;
         this.setAction();
     }
-
     setAction() {
         switch (this.action) {
             case 'attack':
@@ -33,11 +33,13 @@ class Character {
     }
 
     draw() {
-        if(this.frame < this.endFrame) {
-            this.frame++;
-        } else{
-            this.frame = this.startFrame;
-        }
+        if(cm.playedFrame % 20 === 0){
+            if(this.frame < this.endFrame) {
+                this.frame++;
+            } else{
+                this.frame = this.startFrame;
+            }
+        }        
 
         cm.context.drawImage(
             this.image,

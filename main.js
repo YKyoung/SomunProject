@@ -3,6 +3,7 @@ const cm = {
     context: undefined,
     canvasWidth: 0,
     canvasHeight: 0,
+    playedFrame: 0,
     colors: [
         '222, 35, 18', //red
         '238, 150, 63', //orange
@@ -34,6 +35,7 @@ const cm = {
     const mouse ={x: 0, y: 0};
     const lights =[];
     const characters = [];
+    const allItems = [];
     let indexOfLight = 0;
 
     function setSize() {
@@ -63,12 +65,34 @@ const cm = {
 
         characters.push(somun);
         characters.push(ji);
+
+        for(let i = 0; i < characters.length; i++){
+            allItems.push(characters[i]);
+        }
     }
 
     function setup() {
         setSize();
         setCharacters();
         draw();
+    }
+
+    
+
+    function setZOrder() {
+        let temp;
+        for (let i = 0; i < allItems.length; i++) {
+            for (let j = 0; j < allItems.length -i; j++) {
+                if (j < allItems.length -1) {
+                    if (allItems[j].yForOrder > allItems[j+1].yForOrder) {
+                        temp = allItems[j];
+                        allItems[j] = allItems[j+1];
+                        allItems[j+1] = temp;
+                    }
+                }
+            }
+        }
+
     }
 
     //const particle = new Particle(100, 400);
@@ -81,11 +105,30 @@ const cm = {
         //particle.draw();
         //line.draw();
         //light.draw();
-        let light;
-        let character;
+        //let light;
+        //let character;
+        //let scaleRatio;
+        let item;
         let scaleRatio;
 
-        for (let i = 0; i < characters.length; i++) {
+        for(let i = 0; i < allItems.length; i++) {
+            item = allItems[i];
+            //console.log(item);
+            if (item instanceof Character) {
+                item.draw();
+            }else {
+               // scaleRatio = light.y/cm.canvasHeight + 1;
+                scaleRatio = item.y/cm.canvasHeight + 1;
+                cm.context.save();  //밑의 상태를 저장
+                cm.context.translate(item.x, item.y);
+                cm.context.scale(scaleRatio, scaleRatio);
+                cm.context.translate(-item.x, -item.y);
+                item.draw();
+                cm.context.restore();   
+            }
+        }
+
+       /* for (let i = 0; i < characters.length; i++) {
             character = characters[i];
             character.draw();
         }
@@ -100,6 +143,11 @@ const cm = {
             light.draw();
             cm.context.restore();
             //console.log(light.y);
+        } */
+
+        cm.playedFrame++;
+        if (cm.playedFrame > 1000000){
+            cm.playedFrame = 0;
         }
 
         requestAnimationFrame(draw);
@@ -115,11 +163,22 @@ const cm = {
 
         const light = new Light(indexOfLight, mouse.x, mouse.y);
         lights.push(light);
+        allItems.push(light);
+        
         indexOfLight++;
         //console.log(indexOfLight);
 
-    });
+        if(indexOfLight >= cm.colors.length){
+            characters[0].updateAction('attack');
+            characters[1].updateAction('underAttack');
 
+        }
+        console.log("ggggg");
+
+        setZOrder();
+
+    });
+    
     window.addEventListener('resize', setSize);
     window.addEventListener('load', setup);
 

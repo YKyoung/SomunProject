@@ -27,11 +27,11 @@ class Line {
             0, gradientStartY, 0, this.y
         );
 
-    //    this.gradient.addColorStop(0.0,  `rgba(${cm.colors[index]}, 0.0)`);   
-    //    this.gradient.addColorStop(0.5,  `rgba(${cm.colors[index]}, 0.5)`);   
-    //    this.gradient.addColorStop(0.75, `rgba(${cm.colors[index]}, 0.75)`);   
-    //    this.gradient.addColorStop(1.0,  `rgba(${cm.colors[index]}, 1.0)`);  //의미가 없음
-       this.gradient.addColorStop(1.0,  `rgb(${cm.colors[index]})`);  
+       this.gradient.addColorStop(0.0,  `rgba(${cm.colors[index]}, 0.0)`);   
+       this.gradient.addColorStop(0.5,  `rgba(${cm.colors[index]}, 0.5)`);   
+       this.gradient.addColorStop(0.75, `rgba(${cm.colors[index]}, 0.75)`);   
+       this.gradient.addColorStop(1.0,  `rgba(${cm.colors[index]}, 1.0)`);  //의미가 없음
+    //    this.gradient.addColorStop(1.0,  `rgb(${cm.colors[index]})`);  
         
        //console.log(index);
         
@@ -119,10 +119,10 @@ class Light {
             0, cm.canvasHeight - (this.height + (cm.canvasHeight - this.y)),
             0, this.y);
         
-    //    this.gradient.addColorStop(0.0,  `rgba(${cm.colors[index]}, 0.0)`);   
-    //    this.gradient.addColorStop(0.5,  `rgba(${cm.colors[index]}, 0.5)`);   
+       this.gradient.addColorStop(0.0,  `rgba(${cm.colors[index]}, 0.0)`);   
+       this.gradient.addColorStop(0.5,  `rgba(${cm.colors[index]}, 0.5)`);   
        this.gradient.addColorStop(0.75, `rgba(${cm.colors[index]}, 0.8)`);   
-    //    this.gradient.addColorStop(1.0,  `rgba(${cm.colors[index]}, 1.0)`); //약간 의미가 있음 
+       this.gradient.addColorStop(1.0,  `rgba(${cm.colors[index]}, 1.0)`); //약간 의미가 있음 
         // this.gradient.addColorStop(1.0,  `rgb(${cm.colors[index]})`);  
         
         //console.log(index);

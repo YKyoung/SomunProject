@@ -102,7 +102,7 @@ class Light {
         this.x = x;
         this.y = y;
         //this.index = index;
-        this.yForOrder = this.y;
+        this.yForOrder = this.y;   ///위치 주의
         this.width = 20;
         this.height = 300;
         this.angle =0;
